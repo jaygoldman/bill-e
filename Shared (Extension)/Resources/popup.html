@@ -6,6 +6,70 @@
     <script type="module" src="popup.js"></script>
 </head>
 <body>
-    <strong>Hello World!</strong>
+    <h1>BILL-E</h1>
+    <p class="extension_description">Make your virtual bookshelf real.</p>
+    
+    <div id="not_read_amazon_com">
+        <h2>Please visit <a href="https://read.amazon.com" title="Kindle Reader" target="_blank">read.amazon.com</a></h2>
+        <p class="extension_description">BILL-E is only designed to work when you're logged into read.amazon.com and are on that tab. Please visit the Kindle Reader app on the web, login, and try again.</p>
+    </div>
+    <div id="tabs_frame">
+        <ul id="tabs_selector">
+            <li id="tabs_selector_activity" class="tabs_selected">Activity</li>
+            <li id="tabs_selector_settings">Settings</li>
+        </ul>
+        
+        <div id="tabs_content">
+            <div id="tabs_content_activity" class="tabs_tab tabs_visible">
+                <section id="activty_spinner">
+                    <div id="activity_spinner_animation">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </section>
+                <section id="activity_progress">
+                    <div id="activity_progress_bar"><div id="activity_progress_percent">0%</div></div>
+                    <div id="activity_progress_step">Finding the Allen key</div>
+                </section>
+                <section id="activity_action" class="action">
+                    <button id="activity_action_button" type="button" disabled="disabled">Send to BILL-E</button>
+                    <p id="activity_action_complete"  class="action_complete">Sent to BILL-E</p>
+                </section>
+            </div>
+            <div id="tabs_content_settings" class="tabs_tab">
+                <section id="mode_send">
+                    <h2><input type="radio" id="bille_mode_send" name="bille_mode" value="send" checked="checked" /><label for="bille_mode_send">Send Library to BILL-E</label></h2>
+                    <div class="mode_option">
+                        <p class="mode_description">Send your latest Kindle purchases to your BILL-E frame.</p>
+                        <label for="bille_send_address">BILL-E IP address:</label>
+                        <input type="text" id="bille_send_address" placeholder="0.0.0.0"/>
+                    </div>
+                </section>
+                <section id="mode_download">
+                    <h2><input type="radio" id="bille_mode_download" name="bille_mode" value="download" /><label for="bille_mode_download">Download Library</label></h2>
+                    <div class="mode_option">
+                        <p class="mode_description">Download your latest Kindle purchases as a file.</p>
+                        <input type="radio" id="bille_download_csv" name="bille_download_type" class="download_type" value="csv" disabled="disabled" checked="checked" /><label for="bille_download_csv" class="disabled" >CSV</label>
+                        <input type="radio" id="bille_download_json" name="bille_download_type"  class="download_type" value="json" disabled="disabled" /><label for="bille_download_json" class="disabled">JSON</label>
+                    </div>
+                </section>
+                <section id="settings_action" class="action">
+                    <button id="settings_action_button" type="button">Save Settings</button>
+                    <p id="settings_action_complete" class="action_complete">Settings saved</p>
+                </section>
+            </div>
+        </div>
+    </div>
+    
+    <section id="more_info">
+        <p>Visit <a href="http://github.com/jaygoldman/bill-e" title="BILL-E website" target="_blank">BILL-E Github</a> for more information.</p>
+    </section>
+            
 </body>
 </html>

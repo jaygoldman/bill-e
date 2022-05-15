@@ -2,8 +2,8 @@
     "manifest_version": 2,
     "default_locale": "en",
 
-    "name": "__MSG_extension_name__",
-    "description": "__MSG_extension_description__",
+    "name": "BILL-E",
+    "description": "Make your virtual bookshelf real.",
     "version": "1.0",
 
     "icons": {
@@ -21,7 +21,10 @@
 
     "content_scripts": [{
         "js": [ "content.js" ],
-        "matches": [ "*://example.com/*" ]
+        "matches": [
+            "https://read.amazon.com/*",
+            "https://amazon.com/*"
+        ]
     }],
 
     "browser_action": {
@@ -36,5 +39,10 @@
         }
     },
 
-    "permissions": [ ]
+    "permissions": [
+        "activeTab",
+        "tabs",
+        "storage",
+        "cookies"
+    ]
 }

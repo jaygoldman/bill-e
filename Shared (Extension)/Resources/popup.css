@@ -1,15 +1,297 @@
+/*********************************************************************
+ * General formatting
+ *********************************************************************/
+
 :root {
-    color-scheme: light dark;
+    color-scheme:light dark;
 }
 
 body {
-    width: 100px;
-    padding: 10px;
+    width:400px;
+    padding:10px;
 
-    font-family: system-ui;
-    text-align: center;
+    font-family:system-ui;
+    text-align:left;
 }
 
-@media (prefers-color-scheme: dark) {
+#more_info{
+    clear:left;
+    color:#807e7e;
+    font-size:9pt;
+    margin:20px 0px 10px 0px;
+    width:100%;
+}
+
+/*********************************************************************
+ * Header
+ *********************************************************************/
+
+h1{
+    font-size:18pt;
+    font-weight:bold;
+    margin:10px 0px 2px 0px;
+}
+
+p.extension_description{
+    color:#807e7e;
+    margin:0px 0px 30px 0px;
+}
+
+/*********************************************************************
+ * Content blocker when we're not on read.amazon.com
+ *********************************************************************/
+
+#not_read_amazon_com{
+    background-color:#F0E8EE;
+    height:210px;
+    font-size:10pt;
+    left:5px;
+    padding:20px;
+    position:absolute;
+    top:90px;
+    width:395px;
+    z-index:10;
+}
+
+/*********************************************************************
+ * Tabs
+ *********************************************************************/
+
+div#tabs_frame{
+    background:#eaeaeb;
+    border:1px solid #e0d9e1;
+    border-radius:5px;
+    margin-left:10px;
+    position:relative;
+    width:380px;
+    z-index:1;
+}
+ul#tabs_selector{
+    background-color:#E6DFE7;
+    border:1px solid #e0d9e1;
+    border-radius:5px;
+    left:90px;
+    list-style:none;
+    padding:0px;
+    margin:0px;
+    position:absolute;
+    top:-15px;
+    width:200px;
+}
+ul#tabs_selector li{
+    background-color:#E6DFE7;
+    cursor:pointer;
+    float:left;
+    padding:3px 0px 3px 0px;
+    text-align:center;
+    width:99px;
+}
+ul#tabs_selector li.tabs_selected{
+    background-color:white;
+    border:1px solid #e0d9e1;
+    border-radius:5px;
+}
+
+#tabs_content .tabs_tab{
+    display:none;
+}
+#tabs_content .tabs_visible{
+    display:block !important;
+}
+
+h2 label{
+   font-size:12pt;
+   margin:0px;
+}
+h2{
+    margin:0px;
+}
+
+.action{
+    border-top:1px solid #e0d9e1;
+    margin:0px 10px 10px 10px;
+    padding-top:10px;
+    text-align:center;
+}
+.action button{
+    background-color:white;
+    border:1px solid #e0d9e1;
+    border-radius:5px;
+    margin:0px auto;
+    text-align:center;
+}
+
+
+/*********************************************************************
+ * Activity tab
+ *********************************************************************/
+
+#activty_spinner{
+    display:block;
+    height:80px;
+    margin:0px;
+    text-align:center;
+    width:100%;
+}
+#activity_spinner_animation{
+    height:50px;
+    margin:30px auto;
+    position:relative;
+    width:50px;
+}
+#activity_spinner_animation div{
+    background:black;
+    height:15px;
+    left:20px;
+    opacity:0.05;
+    position:absolute;
+    top:35px;
+    width:10px;
+    -webkit-animation:fadeit 1.1s linear infinite;
+}
+#activity_spinner_animation div:nth-child(1){
+    -webkit-transform:rotate(0deg) translate(0, -30px);
+    -webkit-animation-delay:0.39s;
+}
+#activity_spinner_animation div:nth-child(2){
+    -webkit-transform:rotate(45deg) translate(0, -30px);
+    -webkit-animation-delay:0.52s;
+}
+#activity_spinner_animation div:nth-child(3){
+    -webkit-transform:rotate(90deg) translate(0, -30px);
+    -webkit-animation-delay:0.65s;
+}
+#activity_spinner_animation div:nth-child(4){
+    -webkit-transform:rotate(135deg) translate(0, -30px);
+    -webkit-animation-delay:0.78s;
+}
+#activity_spinner_animation div:nth-child(5){
+    -webkit-transform:rotate(180deg) translate(0, -30px);
+    -webkit-animation-delay:0.91s;
+}
+#activity_spinner_animation div:nth-child(6){
+    -webkit-transform:rotate(225deg) translate(0, -30px);
+    -webkit-animation-delay:1.04s;
+}
+#activity_spinner_animation div:nth-child(7){
+    -webkit-transform:rotate(270deg) translate(0, -30px);
+    -webkit-animation-delay:1.17s;
+}
+#activity_spinner_animation div:nth-child(8){
+    -webkit-transform:rotate(315deg) translate(0, -30px);
+    -webkit-animation-delay:1.3s;
+}
+@-webkit-keyframes fadeit{
+    0%{
+        opacity:1;
+    }
+    100%{
+        opacity:0;
+    }
+}
+
+#activity_progress{
+    margin:20px 0px 10px 0px;
+}
+#activity_progress_bar{
+    background-color:#bababa;
+    border:1px solid #e0d9e1;
+    margin:10px auto;
+    width:80%;
+}
+#activity_progress_percent{
+    background-color:#E3ECF6;
+    border-right:1px solid #e0d9e1;
+    color:grey;
+    text-align:center;
+    width:10%;
+}
+#activity_progress_step{
+    color:#969696;
+    font-size:9pt;
+    text-align:center;
+}
+
+#activity_action_button{
+    cursor:pointer;
+}
+
+/*********************************************************************
+ * Settings tab
+ *********************************************************************/
+
+#tabs_content_settings{
+    padding:20px;
+}
+.mode_option{
+    padding-left:20px;
+}
+
+p.mode_description{
+    color:#807e7e;
+    font-size:9pt;
+    margin:0px 0px 10px 0px;
+}
+
+label{
+    font-size:9pt;
+}
+
+.disabled{
+    color:#bfbfbf;
+}
+
+#mode_download{
+    margin-bottom:20px;
+}
+
+#settings_action_button{
+    cursor:pointer;
+}
+
+p.action_complete{
+    display:none;
+    font-size: 8pt;
+    margin: 5px 0px 0px 0px;
+    text-align:center;
+}
+
+@media (prefers-color-scheme:dark) {
     /* Dark Mode styles go here. */
+    #not_read_amazon_com{
+        background-color: #2A2831;
+    }
+    
+    #more_info{
+        color:white;
+    }
+    
+    p.extension_description{
+        color:white;
+    }
+    
+    div#tabs_frame{
+        background-color:#28222D;
+        border:1px solid #423D46;
+    }
+    
+    ul#tabs_selector{
+        background-color:#2C2731;
+        border:1px solid #59555D;
+    }
+    
+    ul#tabs_selector li{
+        background-color:#2C2731;
+        color:#DFDEE0;
+    }
+    
+    ul#tabs_selector li.tabs_selected{
+        background-color:#615D65;
+        border:1px solid #3E3A42;
+        color:#E7E6E7;
+    }
+    
+    .action button{
+        background-color:#5E5962;
+    }
 }
